@@ -3,101 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Changelog</title>
+    <title>Changelog - Awesome Roblox Game</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
+        /* Copy the styles from index.html here */
+        /* ... */
+        .changelog-entry {
+            background-color: #2c2c2c;
+            border-radius: 10px;
             padding: 20px;
-            background-color: #f5f5f5;
+            margin-bottom: 30px;
         }
-        h1 {
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
+        .changelog-entry h2 {
+            color: #ff4d4d;
+            margin-top: 0;
         }
-        .version {
-            background-color: white;
-            margin-bottom: 20px;
-            padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        .changelog-entry ul {
+            list-style-type: none;
+            padding-left: 0;
         }
-        .version-header {
-            font-weight: bold;
-            margin-bottom: 15px;
-            font-size: 1.2em;
-            color: #2c3e50;
+        .changelog-entry li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
         }
-        .category {
-            margin-bottom: 15px;
-        }
-        .category-label {
-            font-weight: bold;
-            margin-bottom: 5px;
-            padding: 2px 6px;
-            border-radius: 3px;
-            color: white;
+        .tag {
             display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-right: 10px;
         }
-        .category-list {
-            list-style-type: disc;
-            padding-left: 20px;
-            margin-top: 5px;
+        .tag-added {
+            background-color: #4CAF50;
+            color: white;
         }
-        .added .category-label { background-color: #2ecc71; }
-        .removed .category-label { background-color: #e74c3c; }
-        .fixed .category-label { background-color: #3498db; }
+        .tag-removed {
+            background-color: #F44336;
+            color: white;
+        }
+        .tag-fixed {
+            background-color: #2196F3;
+            color: white;
+        }
     </style>
 </head>
 <body>
-    <h1>Project Changelog</h1>
-    
-    <div class="version">
-        <div class="version-header">v1.5 (2023-08-15)</div>
-        
-        <div class="category added">
-            <span class="category-label">Added</span>
-            <ul class="category-list">
-                <li>Support for dark mode</li>
-                <li>New dashboard widgets</li>
-            </ul>
-        </div>
-        
-        <div class="category removed">
-            <span class="category-label">Removed</span>
-            <ul class="category-list">
-                <li>Deprecated API endpoints</li>
-            </ul>
-        </div>
-        
-        <div class="category fixed">
-            <span class="category-label">Fixed</span>
-            <ul class="category-list">
-                <li>Authentication bug</li>
-                <li>Database performance issues</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="version">
-        <div class="version-header">v1.4 (2023-07-01)</div>
-        
-        <div class="category added">
-            <span class="category-label">Added</span>
-            <ul class="category-list">
-                <li>New analytics features</li>
-            </ul>
-        </div>
-        
-        <div class="category fixed">
-            <span class="category-label">Fixed</span>
-            <ul class="category-list">
-                <li>Mobile responsiveness issues</li>
-            </ul>
+    <header>
+        <div class="logo"></div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="info.html">Info</a></li>
+            <li><a href="changelog.html">Changelog</a></li>
+            <li><a href="credits.html">Credits</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="content">
+            <h1>Changelog</h1>
+            <div class="changelog-entry">
+                <h2>v1.5 (2023-08-15)</h2>
+                <ul>
+                    <li><span class="tag tag-added">Added</span> Support for dark mode</li>
+                    <li><span class="tag tag-added">Added</span> New dashboard widgets</li>
+                    <li><span class="tag tag-removed">Removed</span> Deprecated API endpoints</li>
+                    <li><span class="tag tag-fixed">Fixed</span> Authentication bug</li>
+                    <li><span class="tag tag-fixed">Fixed</span> Database performance issues</li>
+                </ul>
+            </div>
+            <div class="changelog-entry">
+                <h2>v1.4 (2023-07-01)</h2>
+                <ul>
+                    <li><span class="tag tag-added">Added</span> New analytics features</li>
+                    <li><span class="tag tag-fixed">Fixed</span> Mobile responsiveness issues</li>
+                </ul>
+            </div>
         </div>
     </div>
 </body>
