@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Changelog</title>
+    <title>Project Navigation</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -19,99 +19,34 @@
             border-bottom: 2px solid #3498db;
             padding-bottom: 10px;
         }
-        .version {
-            background-color: white;
-            margin-bottom: 20px;
-            padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        .nav-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
         }
-        .version-header {
-            font-weight: bold;
-            margin-bottom: 15px;
-            font-size: 1.2em;
-            color: #2c3e50;
-        }
-        .category {
-            margin-bottom: 15px;
-        }
-        .category-label {
-            font-weight: bold;
-            margin-bottom: 5px;
-            padding: 2px 6px;
-            border-radius: 3px;
+        .nav-button {
+            padding: 10px 20px;
+            font-size: 1.1em;
             color: white;
-            display: inline-block;
+            background-color: #3498db;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
         }
-        .category-list {
-            list-style-type: disc;
-            padding-left: 20px;
-            margin-top: 5px;
+        .nav-button:hover {
+            background-color: #2980b9;
         }
-        .added .category-label { background-color: #2ecc71; }
-        .removed .category-label { background-color: #e74c3c; }
-        .fixed .category-label { background-color: #3498db; }
     </style>
 </head>
 <body>
-    <h1>Project Changelog</h1>
-    
-    <div class="version">
-        <div class="version-header">v1.5 (2023-08-15)</div>
-        
-        <div class="category added">
-            <span class="category-label">Added</span>
-            <ul class="category-list">
-                <li>Support for dark mode across all pages</li>
-                <li>New dashboard widgets for better data visualization</li>
-                <li>Enhanced user profile customization options</li>
-            </ul>
-        </div>
-        
-        <div class="category removed">
-            <span class="category-label">Removed</span>
-            <ul class="category-list">
-                <li>Deprecated API endpoints that were no longer in use</li>
-                <li>Legacy payment gateway integration</li>
-            </ul>
-        </div>
-        
-        <div class="category fixed">
-            <span class="category-label">Fixed</span>
-            <ul class="category-list">
-                <li>Critical bug in the user authentication process</li>
-                <li>Performance issues in the database query optimization</li>
-                <li>Incorrect date formatting in exported reports</li>
-            </ul>
-        </div>
+    <h1>Project Navigation</h1>
+    <div class="nav-buttons">
+        <a href="home.html" class="nav-button">Home</a>
+        <a href="info.html" class="nav-button">Info</a>
+        <a href="changelog.html" class="nav-button">Changelog</a>
+        <a href="credits.html" class="nav-button">Credits</a>
     </div>
-
-    <div class="version">
-        <div class="version-header">v1.4 (2023-07-01)</div>
-        
-        <div class="category added">
-            <span class="category-label">Added</span>
-            <ul class="category-list">
-                <li>Introduced new dashboard features for enhanced user analytics</li>
-                <li>Support for multiple languages in the user interface</li>
-            </ul>
-        </div>
-        
-        <div class="category removed">
-            <span class="category-label">Removed</span>
-            <ul class="category-list">
-                <li>Legacy code paths that were slowing down the application</li>
-            </ul>
-        </div>
-        
-        <div class="category fixed">
-            <span class="category-label">Fixed</span>
-            <ul class="category-list">
-                <li>Resolved issues with mobile responsiveness on smaller devices</li>
-                <li>Corrected inconsistencies in the search algorithm</li>
-            </ul>
-        </div>
-    </div>
-  
 </body>
 </html>
