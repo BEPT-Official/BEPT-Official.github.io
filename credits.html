@@ -3,44 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Credits - Project Name</title>
+    <title>Credits - Awesome Roblox Game</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
+        /* Copy the styles from index.html here */
+        /* ... */
+        .credit-section {
+            background-color: #2c2c2c;
+            border-radius: 10px;
             padding: 20px;
-            background-color: #f5f5f5;
+            margin-bottom: 30px;
         }
-        h1 {
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
+        .credit-section h2 {
+            color: #ff4d4d;
+            margin-top: 0;
         }
-        .back-button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 1em;
-            color: white;
-            background-color: #3498db;
-            border: none;
+        .credit-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .credit-item {
+            background-color: #3c3c3c;
             border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            width: 200px;
+        }
+        .credit-item h3 {
+            margin-top: 0;
+            color: #ff4d4d;
         }
     </style>
 </head>
 <body>
-    <h1>Project Credits</h1>
-    <p>We would like to thank all the contributors who made this project possible:</p>
-    <ul>
-        <li>John Doe - Lead Developer</li>
-        <li>Jane Smith - UX Designer</li>
-        <li>Alex Johnson - QA Tester</li>
-    </ul>
-    <a href="index.html" class="back-button">Back to Navigation</a>
+    <header>
+        <div class="logo"></div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="info.html">Info</a></li>
+            <li><a href="changelog.html">Changelog</a></li>
+            <li><a href="credits.html">Credits</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="content">
+            <h1>Credits</h1>
+            <div class="credit-section">
+                <h2>Development Team</h2>
+                <div class="credit-list">
+                    <div class="credit-item">
+                        <h3>John Doe</h3>
+                        <p>Lead Developer</p>
+                    </div>
+                    <div class="credit-item">
+                        <h3>Jane Smith</h3>
+                        <p>3D Artist</p>
+                    </div>
+                    <div class="credit-item">
+                        <h3>Mike Johnson</h3>
+                        <p>Game Designer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="credit-section">
+                <h2>Special Thanks</h2>
+                <p>We'd like to thank our amazing community for their support and feedback throughout the development process. Your passion drives us to make this game better every day!</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
