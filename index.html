@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Awesome Roblox Game</title>
+    <title>Awesome Roblox Adventure</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
         body, html {
             margin: 0;
             padding: 0;
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #1a1a1a;
             color: #ffffff;
         }
@@ -20,17 +19,16 @@
         }
         header {
             text-align: center;
-            padding: 50px 0;
-            background: linear-gradient(to bottom, rgba(26,26,26,1) 0%, rgba(26,26,26,0) 100%);
+            padding: 20px 0;
         }
         .logo {
             width: 200px;
             height: 200px;
-            background-image: url('https://via.placeholder.com/200x200.png?text=Game+Logo');
-            background-size: cover;
             margin: 0 auto;
-            border-radius: 50%;
-            box-shadow: 0 0 20px rgba(255,255,255,0.1);
+            background: url('https://via.placeholder.com/200') no-repeat center;
+            background-size: cover;
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0));
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0));
         }
         nav {
             background-color: #2c2c2c;
@@ -40,69 +38,65 @@
         nav ul {
             list-style-type: none;
             padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
+            text-align: center;
         }
         nav ul li {
+            display: inline;
             margin: 0 15px;
         }
         nav ul li a {
             color: #ffffff;
             text-decoration: none;
             font-weight: bold;
-            font-size: 18px;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
         }
         nav ul li a:hover {
-            color: #ff4d4d;
+            color: #ff4500;
         }
         .content {
-            margin-top: 50px;
+            margin-top: 40px;
             text-align: center;
         }
         h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-            color: #ff4d4d;
+            color: #ff4500;
+            font-size: 2.5em;
         }
         p {
-            font-size: 1.2em;
+            font-size: 1.1em;
             line-height: 1.6;
-            margin-bottom: 30px;
         }
         .cta-button {
             display: inline-block;
-            padding: 15px 30px;
-            background-color: #ff4d4d;
+            background-color: #ff4500;
             color: #ffffff;
+            padding: 12px 24px;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2em;
             border-radius: 5px;
-            transition: background-color 0.3s ease;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background-color 0.3s;
         }
         .cta-button:hover {
-            background-color: #ff3333;
+            background-color: #ff6a33;
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo"></div>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="info.html">Info</a></li>
-            <li><a href="changelog.html">Changelog</a></li>
-            <li><a href="credits.html">Credits</a></li>
-        </ul>
-    </nav>
     <div class="container">
+        <header>
+            <div class="logo"></div>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="info.html">Info</a></li>
+                <li><a href="changelog.html">Changelog</a></li>
+                <li><a href="credits.html">Credits</a></li>
+            </ul>
+        </nav>
         <div class="content">
-            <h1>Welcome to Awesome Roblox Game</h1>
-            <p>Embark on an epic adventure in the world of Roblox! Join thousands of players in this thrilling game where you can build, battle, and explore like never before.</p>
+            <h1>Welcome to Awesome Roblox Adventure</h1>
+            <p>Embark on an epic journey through stunning worlds, challenging obstacles, and thrilling adventures!</p>
             <a href="#" class="cta-button">Play Now!</a>
         </div>
     </div>
