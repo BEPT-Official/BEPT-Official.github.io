@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Changelog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .version {
+            background-color: white;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .version-header {
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            color: #2c3e50;
+        }
+        .category {
+            margin-bottom: 15px;
+        }
+        .category-label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: white;
+            display: inline-block;
+        }
+        .category-list {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+        .added .category-label { background-color: #2ecc71; }
+        .removed .category-label { background-color: #e74c3c; }
+        .fixed .category-label { background-color: #3498db; }
+    </style>
+</head>
+<body>
+    <h1>Project Changelog</h1>
+    
+    <div class="version">
+        <div class="version-header">v1.5 (2023-08-15)</div>
+        
+        <div class="category added">
+            <span class="category-label">Added</span>
+            <ul class="category-list">
+                <li>Support for dark mode</li>
+                <li>New dashboard widgets</li>
+            </ul>
+        </div>
+        
+        <div class="category removed">
+            <span class="category-label">Removed</span>
+            <ul class="category-list">
+                <li>Deprecated API endpoints</li>
+            </ul>
+        </div>
+        
+        <div class="category fixed">
+            <span class="category-label">Fixed</span>
+            <ul class="category-list">
+                <li>Authentication bug</li>
+                <li>Database performance issues</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="version">
+        <div class="version-header">v1.4 (2023-07-01)</div>
+        
+        <div class="category added">
+            <span class="category-label">Added</span>
+            <ul class="category-list">
+                <li>New analytics features</li>
+            </ul>
+        </div>
+        
+        <div class="category fixed">
+            <span class="category-label">Fixed</span>
+            <ul class="category-list">
+                <li>Mobile responsiveness issues</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
