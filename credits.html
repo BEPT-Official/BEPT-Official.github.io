@@ -3,75 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Credits - Awesome Roblox Game</title>
+    <title>Changelog - Awesome Roblox Game</title>
     <style>
-        /* Copy the styles from index.html here */
-        /* ... */
-        .credit-section {
-            background-color: #2c2c2c;
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #00a2ff;
+            color: #fff;
+            padding: 20px 0;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #00a2ff;
+        }
+        .changelog-entry {
+            background-color: #fff;
             border-radius: 10px;
             padding: 20px;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        .credit-section h2 {
-            color: #ff4d4d;
-            margin-top: 0;
+        .changelog-date {
+            font-weight: bold;
+            color: #00a2ff;
+            margin-bottom: 10px;
         }
-        .credit-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+        .changelog-list {
+            list-style-type: none;
+            padding-left: 0;
         }
-        .credit-item {
-            background-color: #3c3c3c;
-            border-radius: 5px;
-            padding: 10px;
-            margin: 10px;
-            text-align: center;
-            width: 200px;
+        .changelog-item {
+            margin-bottom: 5px;
+            padding-left: 20px;
+            position: relative;
         }
-        .credit-item h3 {
-            margin-top: 0;
-            color: #ff4d4d;
+        .changelog-item::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #00a2ff;
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo"></div>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="info.html">Info</a></li>
-            <li><a href="changelog.html">Changelog</a></li>
-            <li><a href="credits.html">Credits</a></li>
-        </ul>
-    </nav>
-    <div class="container">
-        <div class="content">
-            <h1>Credits</h1>
-            <div class="credit-section">
-                <h2>Development Team</h2>
-                <div class="credit-list">
-                    <div class="credit-item">
-                        <h3>John Doe</h3>
-                        <p>Lead Developer</p>
-                    </div>
-                    <div class="credit-item">
-                        <h3>Jane Smith</h3>
-                        <p>3D Artist</p>
-                    </div>
-                    <div class="credit-item">
-                        <h3>Mike Johnson</h3>
-                        <p>Game Designer</p>
-                    </div>
+        <div class="container">
+            <nav>
+                <div class="logo">Awesome Roblox Game</div>
+                <div>
+                    <a href="index.html">Home</a>
+                    <a href="info.html">Info</a>
+                    <a href="changelog.html">Changelog</a>
+                    <a href="credits.html">Credits</a>
                 </div>
-            </div>
-            <div class="credit-section">
-                <h2>Special Thanks</h2>
-                <p>We'd like to thank our amazing community for their support and feedback throughout the development process. Your passion drives us to make this game better every day!</p>
-            </div>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Changelog</h1>
+        <div class="changelog-entry">
+            <div class="changelog-date">Version 1.2.0 (August 15, 2023)</div>
+            <ul class="changelog-list">
+                <li class="changelog-item">Added new desert biome with unique quests and enemies</li>
+                <li class="changelog-item">Introduced trading system between players</li>
+                <li class="changelog-item">Fixed bug causing occasional crashes in multiplayer mode</li>
+                <li class="changelog-item">Improved character customization options</li>
+            </ul>
+        </div>
+        <div class="changelog-entry">
+            <div class="changelog-date">Version 1.1.0 (July 1, 2023)</div>
+            <ul class="changelog-list">
+                <li class="changelog-item">Added new boss fight: The Crystal Golem</li>
+                <li class="changelog-item">Implemented daily reward system</li>
+                <li class="changelog-item">Balanced weapon damage for better gameplay</li>
+                <li class="changelog-item">Various bug fixes and performance improvements</li>
+            </ul>
         </div>
     </div>
 </body>
