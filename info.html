@@ -3,49 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Info - Awesome Roblox Adventure</title>
+    <title>Info - Awesome Roblox Game</title>
     <style>
-        .content {
-            text-align: left;
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
         }
-        .feature {
-            background-color: #2c2c2c;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #00a2ff;
+            color: #fff;
+            padding: 20px 0;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #00a2ff;
+        }
+        .info-section {
+            background-color: #fff;
             border-radius: 10px;
             padding: 20px;
             margin-bottom: 20px;
-        }
-        .feature h2 {
-            color: #ff4500;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
     </style>
 </head>
 <body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Awesome Roblox Game</div>
+                <div>
+                    <a href="index.html">Home</a>
+                    <a href="info.html">Info</a>
+                    <a href="changelog.html">Changelog</a>
+                    <a href="credits.html">Credits</a>
+                </div>
+            </nav>
+        </div>
+    </header>
     <div class="container">
-        <header>
-            <div class="logo"></div>
-        </header>
-        <nav>
+        <h1>Game Information</h1>
+        <div class="info-section">
+            <h2>About Our Game</h2>
+            <p>Awesome Roblox Game is an exciting adventure where players can explore vast worlds, complete challenging quests, and interact with friends from around the globe.</p>
+        </div>
+        <div class="info-section">
+            <h2>Features</h2>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="info.html">Info</a></li>
-                <li><a href="changelog.html">Changelog</a></li>
-                <li><a href="credits.html">Credits</a></li>
+                <li>Immersive 3D environments</li>
+                <li>Multiplayer gameplay</li>
+                <li>Customizable characters</li>
+                <li>Regular updates and events</li>
             </ul>
-        </nav>
-        <div class="content">
-            <h1>Game Information</h1>
-            <div class="feature">
-                <h2>Explore Vast Worlds</h2>
-                <p>Discover unique landscapes, hidden treasures, and face challenging enemies in our expansive game universe.</p>
-            </div>
-            <div class="feature">
-                <h2>Customize Your Character</h2>
-                <p>Create your own unique avatar with hundreds of customization options to stand out in the crowd.</p>
-            </div>
-            <div class="feature">
-                <h2>Team Up with Friends</h2>
-                <p>Join forces with other players to tackle difficult quests and raid dangerous dungeons together.</p>
-            </div>
+        </div>
+        <div class="info-section">
+            <h2>How to Play</h2>
+            <p>Simply log into your Roblox account, search for "Awesome Roblox Game", and click play! Join thousands of other players in this exciting adventure today!</p>
         </div>
     </div>
 </body>
