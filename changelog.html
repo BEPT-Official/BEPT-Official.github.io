@@ -1,86 +1,474 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Changelog - Awesome Roblox Game</title>
+    <title>Changelogs</title>
     <style>
-        /* Copy the styles from index.html here */
-        /* ... */
-        .changelog-entry {
-            background-color: #2c2c2c;
-            border-radius: 10px;
+        /* Styles remain unchanged */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Calibri', sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 20px;
-            margin-bottom: 30px;
         }
-        .changelog-entry h2 {
-            color: #ff4d4d;
-            margin-top: 0;
+
+        header {
+            background-color: #6a0dad;
+            color: #fff;
+            padding: 20px 0;
+            position: relative;
         }
-        .changelog-entry ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        .changelog-entry li {
-            margin-bottom: 10px;
+
+        nav {
             display: flex;
+            justify-content: space-between;
             align-items: center;
         }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #6a0dad;
+            transition: color 0.3s;
+        }
+
+        .changelog-entry {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        summary {
+            font-weight: bold;
+            font-size: 1.2em;
+            cursor: pointer;
+            outline: none;
+            padding: 20px;
+            margin: 0;
+            color: #6a0dad;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        summary:hover {
+            background-color: #e1f3ff;
+        }
+
+        .changelog-item {
+            list-style-type: none;
+        }
+
+        .changelog-sublist {
+            list-style-type: disc;
+            padding-left: 40px;
+            margin: 5px 0 10px 0;
+        }
+
+        .changelog-sublist li {
+            margin-left: 10px;
+        }
+
+        .search-bar {
+            margin-bottom: 20px;
+            text-align: right;
+        }
+
+        .search-bar input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .search-bar input[type="text"]:focus {
+            border-color: #6a0dad;
+        }
+
+        .index-section {
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .index-section h2 {
+            color: #6a0dad;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        .index-section ul {
+            list-style-type: none;
+            padding-left: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .index-section.open ul {
+            max-height: 500px;
+        }
+
+        .index-section li {
+            margin-bottom: 5px;
+        }
+
+        .index-section a {
+            color: #0059ff;
+            text-decoration: none;
+        }
+
+        .index-section a:hover {
+            text-decoration: underline;
+        }
+
         .tag {
-            display: inline-block;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.8em;
+            display: inline-flex;
+            align-items: center;
             font-weight: bold;
             margin-right: 10px;
+            position: relative;
+            padding-left: 20px;
+            color: inherit;
         }
-        .tag-added {
-            background-color: #4CAF50;
-            color: white;
+
+        .tag::before {
+            content: '•';
+            font-size: 1.5em;
+            position: absolute;
+            left: 0;
+            color: inherit;
         }
-        .tag-removed {
-            background-color: #F44336;
-            color: white;
+
+        .tag.added {
+            color: rgb(0, 117, 0);
         }
-        .tag-fixed {
-            background-color: #2196F3;
-            color: white;
+
+        .tag.removed {
+            color: red;
+        }
+
+        .tag.fixed {
+            color: gold;
+        }
+
+        .tag.improved {
+            color: rgb(105, 255, 45);
+        }
+
+        .tag.technical {
+            color: rgb(132, 0, 255);
+        }
+
+        .dark-mode {
+            background-color: #1e1e1e;
+            color: #fff;
+        }
+
+        .dark-mode header {
+            background-color: #333;
+        }
+
+        .dark-mode nav a {
+            color: #fff;
+        }
+
+        .dark-mode h1, .dark-mode .index-section h2 {
+            color: #bb86fc;
+        }
+
+        .dark-mode .changelog-entry {
+            background-color: #2c2c2c;
+        }
+
+        .dark-mode summary {
+            color: #bb86fc;
+            background-color: #2c2c2c;
+        }
+
+        .dark-mode summary:hover {
+            background-color: #383838;
+        }
+
+        .dark-mode-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .dark-mode .dark-mode-toggle {
+            background-color: #444;
+            color: #fff;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .pagination button {
+            background-color: #6a0dad;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .pagination button.disabled {
+            background-color: #ddd;
+            color: #888;
+            cursor: not-allowed;
+        }
+
+        .pagination button:hover:not(.disabled) {
+            background-color: #5a0b9f;
         }
     </style>
 </head>
+
 <body>
     <header>
-        <div class="logo"></div>
+        <div class="container">
+            <nav>
+                <div class="logo">BEPT - Changelogs</div>
+                <div>
+                    <a href="index.html">Home</a>
+                    <a href="info.html">Info</a>
+                    <a href="changelog.html">Changelog</a>
+                    <a href="credits.html">Credits</a>
+                </div>
+            </nav>
+            <button class="dark-mode-toggle" onclick="toggleDarkMode()">Dark Mode</button>
+        </div>
     </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="info.html">Info</a></li>
-            <li><a href="changelog.html">Changelog</a></li>
-            <li><a href="credits.html">Credits</a></li>
-        </ul>
-    </nav>
     <div class="container">
-        <div class="content">
-            <h1>Changelog</h1>
-            <div class="changelog-entry">
-                <h2>v1.5 (2023-08-15)</h2>
-                <ul>
-                    <li><span class="tag tag-added">Added</span> Support for dark mode</li>
-                    <li><span class="tag tag-added">Added</span> New dashboard widgets</li>
-                    <li><span class="tag tag-removed">Removed</span> Deprecated API endpoints</li>
-                    <li><span class="tag tag-fixed">Fixed</span> Authentication bug</li>
-                    <li><span class="tag tag-fixed">Fixed</span> Database performance issues</li>
-                </ul>
-            </div>
-            <div class="changelog-entry">
-                <h2>v1.4 (2023-07-01)</h2>
-                <ul>
-                    <li><span class="tag tag-added">Added</span> New analytics features</li>
-                    <li><span class="tag tag-fixed">Fixed</span> Mobile responsiveness issues</li>
-                </ul>
-            </div>
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Search changelogs..." onkeyup="searchChangelogs()">
+        </div>
+
+        <div class="index-section" id="index-section">
+            <h2 onclick="toggleIndex()">Changelog Index <span id="index-arrow">►</span></h2>
+            <ul id="index"></ul>
+        </div>
+
+        <h1>Changelog</h1>
+        <div id="changelog"></div>
+
+        <div class="pagination">
+            <button id="prev-page" onclick="changePage(-1)" class="disabled">Previous Page</button>
+            <button id="next-page" onclick="changePage(1)">Next Page</button>
         </div>
     </div>
+
+    <script src="changelog_data.js"></script>
+    <script>
+            let currentPage = 1;
+            const entriesPerPage = 5;
+
+            function setCookie(name, value, days) {
+            const date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            const expires = "expires=" + date.toUTCString();
+            document.cookie = `${name}=${value};${expires};path=/`;
+        }
+
+            function getCookie(name) {
+                const nameEQ = name + "=";
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    let cookie = cookies[i].trim();
+                    if (cookie.startsWith(nameEQ)) {
+                        return cookie.substring(nameEQ.length);
+                    }
+                }
+                return null;
+            }
+
+            function toggleDarkMode() {
+                document.body.classList.toggle('dark-mode');
+                document.documentElement.classList.toggle('dark-mode');
+                const darkModeEnabled = document.body.classList.contains('dark-mode');
+                document.querySelector('.dark-mode-toggle').textContent = darkModeEnabled ? 'Light Mode' : 'Dark Mode';
+                setCookie("darkMode", darkModeEnabled ? "enabled" : "disabled", 365);
+            }
+
+            document.addEventListener("DOMContentLoaded", function () {
+                if (getCookie("darkMode") === "enabled") {
+                    document.body.classList.add('dark-mode');
+                    document.documentElement.classList.add('dark-mode');
+                    document.querySelector('.dark-mode-toggle').textContent = 'Light Mode';
+                }
+            });
+
+            function toggleIndex() {
+                const indexSection = document.getElementById("index-section");
+                indexSection.classList.toggle("open");
+
+                const arrow = document.getElementById("index-arrow");
+                if (indexSection.classList.contains("open")) {
+                    arrow.textContent = "▼";
+                } else {
+                    arrow.textContent = "►";
+                }
+            }
+
+            function searchChangelogs() {
+                const searchInput = document.getElementById("search").value.toLowerCase();
+                const entries = document.querySelectorAll(".changelog-entry");
+
+                entries.forEach(entry => {
+                    const summaryText = entry.querySelector("summary").textContent.toLowerCase();
+                    entry.style.display = summaryText.includes(searchInput) ? '' : 'none';
+                });
+            }
+
+            function changePage(direction) {
+                const entries = document.querySelectorAll('.changelog-entry');
+                const maxPage = Math.ceil(entries.length / entriesPerPage);
+
+                if ((direction === -1 && currentPage > 1) || (direction === 1 && currentPage < maxPage)) {
+                    currentPage += direction;
+                    displayChangelogs();
+                }
+            }
+
+            function displayChangelogs(specificId = null) {
+                const entries = document.querySelectorAll('.changelog-entry');
+                const start = (currentPage - 1) * entriesPerPage;
+                const end = start + entriesPerPage;
+
+                entries.forEach((entry, idx) => {
+                    entry.style.display = (idx >= start && idx < end) || (specificId && entry.id === specificId) ? '' : 'none';
+                });
+
+                document.getElementById('prev-page').classList.toggle('disabled', currentPage === 1);
+                document.getElementById('next-page').classList.toggle('disabled', end >= entries.length);
+
+                if (specificId) {
+                    const specificEntry = document.getElementById(specificId);
+                    specificEntry.style.display = '';
+                    specificEntry.open = true;
+                    specificEntry.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+
+            document.addEventListener("DOMContentLoaded", function () {
+                const index = document.getElementById("index");
+                const changelogContainer = document.getElementById("changelog");
+
+                const categories = {};
+
+                changelogData.forEach(data => {
+                    const entry = document.createElement("details");
+                    entry.className = "changelog-entry";
+                    entry.id = data.id;
+
+                    const summary = document.createElement("summary");
+                    summary.textContent = data.summary;
+                    entry.appendChild(summary);
+
+                    const list = document.createElement("ul");
+                    list.className = "changelog-list";
+
+                    data.entries.forEach(entryData => {
+                        if (entryData && entryData.type) {
+                            const item = document.createElement("li");
+                            item.className = "changelog-item";
+
+                            const tag = document.createElement("span");
+                            tag.className = "tag " + entryData.type;
+                            tag.textContent = entryData.type.charAt(0).toUpperCase() + entryData.type.slice(1);
+                            item.appendChild(tag);
+
+                            const sublist = document.createElement("ul");
+                            sublist.className = "changelog-sublist";
+                            entryData.items.forEach(subItem => {
+                                const subItemElement = document.createElement("li");
+                                subItemElement.textContent = subItem;
+                                sublist.appendChild(subItemElement);
+                            });
+
+                            item.appendChild(sublist);
+                            list.appendChild(item);
+                        } else {
+                            console.warn('Undefined entryData or entryData.type detected:', entryData);
+                        }
+                    });
+
+                    entry.appendChild(list);
+                    changelogContainer.appendChild(entry);
+
+                    const category = data.category || "Uncategorized";
+                    if (!categories[category]) {
+                        categories[category] = [];
+                    }
+                    categories[category].push(data);
+                });
+
+                for (const category in categories) {
+                    const categoryElement = document.createElement("li");
+                    categoryElement.textContent = category;
+                    categoryElement.className = "category";
+                    index.appendChild(categoryElement);
+
+                    categories[category].forEach(data => {
+                        const indexItem = document.createElement("li");
+                        const link = document.createElement("a");
+                        link.href = "#" + data.id;
+                        link.textContent = data.summary;
+                        link.addEventListener("click", (e) => {
+                            e.preventDefault();
+                            const entryId = data.id;
+                            displayChangelogs(entryId);
+                            toggleIndex();
+                        });
+                        indexItem.appendChild(link);
+                        index.appendChild(indexItem);
+                    });
+                }
+
+                displayChangelogs();
+            });
+    </script>
 </body>
+
 </html>
