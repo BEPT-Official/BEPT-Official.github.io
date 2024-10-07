@@ -8,7 +8,7 @@
         body, html {
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Calibri', sans-serif;
             background-color: #f0f0f0;
             color: #333;
         }
@@ -59,7 +59,20 @@
         .developer-role {
             font-style: italic;
         }
-    </style>
+    
+        .developer:before {
+            content: url('https://via.placeholder.com/16');
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .developer.lead:before {
+            content: url('https://via.placeholder.com/16?text=L');
+        }
+        .developer.builder:before {
+            content: url('https://via.placeholder.com/16?text=B');
+        }
+        </style>
+
 </head>
 <body>
     <header>
@@ -80,19 +93,19 @@
         <div class="credits-section">
             <h2>Development Team</h2>
             <div class="developer">
-                <div class="developer-name">John Doe</div>
+                <div class="developer-name lead">John Doe</div>
                 <div class="developer-role">Lead Developer</div>
             </div>
             <div class="developer">
-                <div class="developer-name">Jane Smith</div>
+                <div class="developer-name builder">Jane Smith</div>
                 <div class="developer-role">Builder</div>
             </div>
             <div class="developer">
-                <div class="developer-name">Mike Johnson</div>
+                <div class="developer-name builder">Mike Johnson</div>
                 <div class="developer-role">Builder</div>
             </div>
             <div class="developer">
-                <div class="developer-name">Sarah Williams</div>
+                <div class="developer-name builder">Sarah Williams</div>
                 <div class="developer-role">Builder</div>
             </div>
         </div>
